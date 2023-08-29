@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <title>Dashboard - Smart Finance Tracker</title>
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </header>
+    <main>
+        <section id="entry-form">
+            <h2>Enter Financial Statement</h2>
+            <form method="post" action="{{ url_for('dashboard') }}">
+                <input type="number" name="amount" placeholder="Amount" required>
+                <select name="tags" id="tags" required>
+                    <option value="" disabled selected>Select reason for transaction</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="medical">Medical</option>
+                    <option value="grocery">Grocery</option>
+                    <option value="travel">Travel</option>
+                    <option value="investment">Investment</option>
+                    <option value="investment">breakfast</option>
+                    <option value="other">other</option>
+                </select>
+                <div id="otherTagDiv" style="display:none;">
+                    <label for="otherTag">Enter Your Tag:</label>
+                    <input type="text" id="otherTag" name="otherTag">
+                </div>
+                <input type="date" name="Date" placeholder="Date" required>
+
+                <button type="submit">Submit</button>
+            </form>
+    <!-- ... (existing code) ... -->
+
+<!-- ... (existing code) ... -->
+        </section>
+        <h2 style="color: darkgreen;">{{message}}</h2>
+
+        <!-- ... (existing code) ... -->
+            <h2>See your Dashboard</h2>
+
+            <form method="post" action="{{ url_for('dashboard2') }}">
+                <label for="filter">Select Filter:</label>
+                <select name="filter" id="filter">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                    <option value="tags">By Category</option>
+                </select>
+                <button type="submit">Generate Chart</button>
+            </form>
+        <a href="/logout" style="text-decoration: none; text-align: right;">Logout</a>
+</body>
+</html>

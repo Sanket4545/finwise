@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>Smart Personal Finance Tracker</title>
+</head>
+<body style="background-image: url('{{ url_for('static', filename='images/background.jpg') }}');">
+    <header>
+        <h1>FinWise</h1>
+        <h2>Smart Personal Finance Tracker</h2>
+    </header>
+    <main>
+        <section id="intro">
+            <h2>Welcome to the Smart Personal Finance Tracker</h2>
+            <p>Efficiently manage your finances and make informed decisions.</p>
+            <p>Track expenses, set budgets, and receive recommendations.</p>
+        </section>
+        
+        <section id="buttons">
+            <a href="{{ url_for('login') }}" class="button">Login</a>
+            <a href="{{ url_for('register') }}" class="button">Register</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 FinWise</p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
